@@ -7,7 +7,6 @@ module.exports = {
   devtool: 'inline-source-map',
   watch: true,
   target: 'web',
-  mode: 'development',
   module: {
     rules: [
       {
@@ -31,7 +30,6 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "build"),
-    publicPath: '/build/',
     filename: "bundle.js",
   },
   devServer: {
@@ -39,6 +37,9 @@ module.exports = {
     compress: true,
     port: 4000,
     host: '0.0.0.0',
+    allowedHosts: [
+      '0.0.0.0'
+    ],
     hot: true
   },
   plugins: [
